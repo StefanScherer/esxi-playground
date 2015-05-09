@@ -24,6 +24,14 @@ Connect with it to your ESXi server to `192.168.254.135` and user `root` and pas
 
 ![win7](images/win7.png)
 
+### Install Vagrant plugin
+
+To provision the ESXi Vagrant box you have to install the Vagrant ESXi plugin:
+
+```
+vagrant plugin install vagrant-esxi
+```
+
 ### Build the boxes
 
 Just create the two Vagrant boxes with
