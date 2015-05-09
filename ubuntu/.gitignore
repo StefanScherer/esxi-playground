@@ -1,0 +1,7 @@
+packer_cache
+*.iso
+*.log
+*.box
+.vagrant
+version.txt
+output-vmware-iso/
