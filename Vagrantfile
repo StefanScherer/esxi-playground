@@ -1,7 +1,7 @@
 
 Vagrant.configure("2") do |config|
 
-  config.vm.define 'esxi55' do |node_config|
+  config.vm.define 'esxi60' do |node_config|
     node_config.ssh.username = 'root'
     node_config.ssh.shell = 'sh'
     node_config.ssh.insert_key = false
@@ -16,9 +16,9 @@ Vagrant.configure("2") do |config|
       end
     end
 
-    node_config.vm.box = 'esxi55'
-    node_config.vm.hostname = 'esxi55'
-    node_config.vm.box_url = './vmware_esxi55.box'
+    node_config.vm.box = 'esxi60'
+    node_config.vm.hostname = 'esxi60'
+    node_config.vm.box_url = './vmware_esxi60.box'
     node_config.vm.provision "shell", privileged: false, path: "scripts/provision.sh"
   end
 

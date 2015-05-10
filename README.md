@@ -1,24 +1,24 @@
 # ESXi playground
 
-This `Vagrantfile` gives you a little playground to get started with ESXi 5.5.0 and the vSphere Client.
+This `Vagrantfile` gives you a little playground to get started with ESXi 6.0.0 and the vSphere Client.
 
 ## Vagrant boxes
 
-### esxi55
+### esxi60
 
 The basebox must be build with the [packer-esxi](https://github.com/StefanScherer/packer-esxi) repo.
-Add an ESXi 5.5 box with the name `esxi55`.
+Add an ESXi 6.0 box with the name `esxi60`.
 
 After starting up the Vagrant box have a look at the IP address of the ESXi server.
 
-![esxi55](images/esxi55.png)
+![esxi60](images/esxi55.png)
 
 ### win7
 
 The basebox must be build with the [packer-windows](https://github.com/StefanScherer/packer-windows) repo.
 Add a Windows 7 box with the name `windows_7`.
 
-After starting up the Vagrant box the VMware vSphere Client 5.5.0 will be installed.
+After starting up the Vagrant box the VMware vSphere Client 6.0.0 will be installed.
 
 Connect with it to your ESXi server to `192.168.254.135` and user `root` and password `vagrant`.
 
