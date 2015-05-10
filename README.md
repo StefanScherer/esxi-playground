@@ -42,13 +42,22 @@ vagrant up --provider vmware_fusion
 
 ## Create a Vagrant box inside the ESXi server
 
-Go into the `ubuntu` sub directory and build this basebox with `packer` and your just created ESXi server.
+Go into the `packer/ubuntu` sub directory and build this basebox with `packer` and your just created ESXi server. This could be done from your host machine, in my case a MacBook Pro.
 
 Just set the IP address as variable so packer can connect to your ESXi server.
 
 ```
-cd ubuntu
+cd packer/ubuntu
 packer build -var 'remote_host=192.168.254.135' ubuntu1404-desktop-esx.json
 ```
 
 This Ubuntu basebox is the work of all the Box-Cutter maintainers and contributors. You can find the original repo at [https://github.com/boxcutter/ubuntu](https://github.com/boxcutter/ubuntu).
+
+### Run a Vagrant box in ESXi server
+
+Go to the `win7` Box and open up a PowerShell console.
+
+```
+cd c:\vagrant\vagrant
+vagrant up
+```
