@@ -55,7 +55,7 @@ This Ubuntu basebox is the work of all the Box-Cutter maintainers and contributo
 
 ### Run a Vagrant box in ESXi server
 
-Go to the `win7` Box and open up a PowerShell console.
+Go to the `win7` Box and open up a PowerShell console. The vagrant plugin `vagrant-esxi` is a work in progress. This example is just a proof of concept to show that it is possible to power on VM's in ESXi with Vagrant.
 
 ```
 cd c:\vagrant\vagrant
