@@ -9,5 +9,6 @@ choco install -y vagrant
 vagrant plugin install c:\vagrant\plugins\vagrant-esxi-0.1.1.gem
 
 # Download vagrant SSH key to login to ESXi server
+New-Item -Path "C:\Users\vagrant\.ssh" -ItemType Directory
 (New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub', 'C:\Users\vagrant\.ssh\id_rsa.pub')
 (New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant', 'C:\Users\vagrant\.ssh\id_rsa')
