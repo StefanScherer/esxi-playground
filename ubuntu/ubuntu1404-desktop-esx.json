@@ -19,6 +19,7 @@
     "remote_username": "root",
     "remote_password": "vagrant",
     "remote_type": "esx5",
+    "vm_network": "VM Network",
     "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.2-server-amd64.iso",
     "iso_checksum": "3bfa6eac84d527380d0cc52db9092cde127f161e",
     "custom_script": "."
@@ -69,7 +70,8 @@
     "disk_size": 10240,
     "vmx_data": {
       "memsize": "1024",
-      "numvcpus": "1"
+      "numvcpus": "1",
+      "ethernet0.networkName": "{{user `vm_network`}}"
     }
   }],
   "provisioners": [{
