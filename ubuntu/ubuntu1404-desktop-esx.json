@@ -101,11 +101,5 @@
       "script/cmtool.sh",
       "{{ user `custom_script` }}"
     ]
-  }],
-  "post-processors": [{
-    "type": "vagrant",
-    "keep_input_artifact": false,
-    "vagrantfile_template": "tpl/vagrantfile-ubuntu1404-desktop.tpl",
-    "output": "ubuntu1404-desktop_{{.Provider}}.box"
   }]
 }
