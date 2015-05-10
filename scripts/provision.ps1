@@ -7,3 +7,7 @@ cmd /C choco install -y vmwarevsphereclient -version 6.0.0 -source c:\vagrant\ch
 choco install -y vagrant
 # plugin from github.com/frankus0512/vagrant-esxi branch newfeatures
 vagrant plugin install c:\vagrant\plugins\vagrant-esxi-0.1.1.gem
+
+# Download vagrant SSH key to login to ESXi server
+(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub', 'C:\Users\vagrant\.ssh\id_rsa.pub')
+(New-Object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant', 'C:\Users\vagrant\.ssh\id_rsa')
