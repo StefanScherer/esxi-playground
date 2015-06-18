@@ -8,3 +8,6 @@ EOF
 # Before using a remote vSphere Hypervisor with packer, you need to enable
 # GuestIPHack by running the following command:
 esxcli system settings advanced set -o /Net/GuestIPHack -i 1
+
+# set license for ESXi
+# vim-cmd vimsvc/license --set XXXXX-XXXXX-XXXXX-XXXXX-XXXXX

@@ -1,0 +1,12 @@
+
+Vagrant.configure("2") do |config|
+  config.vm.hostname = "testmachine"
+  config.vm.box = "ubuntu1404-desktop"        # Template (source) VM's name already created on the ESXi
+  config.vm.provider :esxi do |esxi|
+    esxi.name = "testmachine"                 # New name you would like to call the (target) VM
+    esxi.host = "192.168.254.135"             # ESXi hostname or IP address
+    esxi.srcds = "datastore1"                 # Source datastore name where the source VM is on
+    esxi.dstds = "datastore1"                 # Destination datastore name where the target VM will be cloned to
+    esxi.user = "root"                        # ESXi username with idrsa.pub key installed
+  end
+end

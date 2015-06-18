@@ -1,7 +1,7 @@
 
 Vagrant.configure("2") do |config|
 
-  config.vm.define 'esxi55' do |node_config|
+  config.vm.define 'esxi60' do |node_config|
     node_config.ssh.username = 'root'
     node_config.ssh.shell = 'sh'
     node_config.ssh.insert_key = false
@@ -16,15 +16,15 @@ Vagrant.configure("2") do |config|
       end
     end
 
-    node_config.vm.box = 'esxi55'
-    node_config.vm.hostname = 'esxi55'
-    node_config.vm.box_url = './vmware_esxi55.box'
+    node_config.vm.box = 'esxi60'
+    node_config.vm.hostname = 'esxi60'
+    node_config.vm.box_url = './vmware_esxi60.box'
     node_config.vm.provision "shell", privileged: false, path: "scripts/provision.sh"
   end
 
   config.vm.define "win7" do |node_config|
     node_config.vm.box = "windows_7"
-    node_config.vm.hostname = "win7"
+    #node_config.vm.hostname = "win7"
 
     node_config.vm.communicator = "winrm"
     node_config.vm.network :forwarded_port, guest: 5985, host: 5985, id: "winrm", auto_correct: true
@@ -35,7 +35,7 @@ Vagrant.configure("2") do |config|
 
     node_config.vm.provider "virtualbox" do |vb, override|
       vb.gui = true
-      vb.customize ["modifyvm", :id, "--memory", 768]
+      vb.customize ["modifyvm", :id, "--memory", 1024]
       vb.customize ["modifyvm", :id, "--cpus", 1]
       vb.customize ["modifyvm", :id, "--vram", "32"]
       vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
     ["vmware_fusion", "vmware_workstation"].each do |provider|
       node_config.vm.provider provider do |v, override|
         v.gui = true
-        v.vmx["memsize"] = "768"
+        v.vmx["memsize"] = "1024"
         v.vmx["numvcpus"] = "1"
       end
     end
