@@ -56,6 +56,8 @@ docker-machine --debug create -d vmwarevsphere \
   dockervm0
 ```
 
+You will need `docker-machine` and `govc` in your PATH. See https://docs.docker.com/machine/ for more details.
+
 Notice: The `docker-machine` driver does not work with the free ESXi license,
 but you can try it in the 60 day trial period without inserting the license.
 
