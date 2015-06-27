@@ -40,6 +40,25 @@ Just create the two Vagrant boxes with
 vagrant up --provider vmware_fusion
 ```
 
+## Create a Docker machine on the ESXi server
+
+You can create a Docker host with `docker-machine` on the ESXi server.
+Use the `create-docker-esxi.sh` script and adjust the IP address of your ESXi VM.
+
+```bash
+docker-machine --debug create -d vmwarevsphere \
+  --vmwarevsphere-vcenter="192.168.254.133" \
+  --vmwarevsphere-username="root" \
+  --vmwarevsphere-password="vagrant" \
+  --vmwarevsphere-network="VM Network" \
+  --vmwarevsphere-datastore="datastore1" \
+  --vmwarevsphere-datacenter="ha-datacenter" \
+  dockervm0
+```
+
+Notice: The `docker-machine` driver does not work with the free ESXi license,
+but you can try it in the 60 day trial period without inserting the license.
+
 ## Create a Vagrant box inside the ESXi server
 
 Go into the `packer/ubuntu` sub directory and build this basebox with `packer` and your just created ESXi server. This could be done from your host machine, in my case a MacBook Pro.
